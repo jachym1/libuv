@@ -280,7 +280,7 @@ int uv_cond_init(uv_cond_t* cond) {
   if (err)
     return -err;
 
-#if !defined(__ANDROID__)
+#if !defined(__ANDROID__) && !defined(__hpux__)
   err = pthread_condattr_setclock(&attr, CLOCK_MONOTONIC);
   if (err)
     goto error2;

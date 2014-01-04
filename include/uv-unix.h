@@ -37,7 +37,7 @@
 
 #include <semaphore.h>
 #include <pthread.h>
-#ifdef __ANDROID__
+#ifdef __ANDROID__|| defined (__hpux__)
 #include "pthread-fixes.h"
 #endif
 #include <signal.h>
@@ -46,6 +46,8 @@
 # include "uv-linux.h"
 #elif defined(__sun)
 # include "uv-sunos.h"
+#elif defined(__hpux__)
+# include "uv-hpux.h"
 #elif defined(__APPLE__)
 # include "uv-darwin.h"
 #elif defined(__DragonFly__)  || \

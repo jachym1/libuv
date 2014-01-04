@@ -248,6 +248,24 @@
             ],
           },
         }],
+        [ 'OS=="hpux"', {
+          'sources': [
+          'src/unix/pthread-fixes.c',
+          'src/unix/hpux.c'
+           ],
+          'defines': [
+            '_XOPEN_SOURCE_EXTENDED',
+            '_INCLUDE_XOPEN_SOURCE_EXTENDED',
+            '_INCLUDE_XOPEN_SOURCE_600',
+            '_INCLUDE_HPUX_SOURCE',
+            '_PSTAT64'
+          ],
+          'link_settings': {
+            'libraries': [
+             '-ldl', '-lrt',
+            ],
+          },
+        }],
         [ 'OS=="freebsd" or OS=="dragonflybsd"', {
           'sources': [ 'src/unix/freebsd.c' ],
         }],
@@ -409,6 +427,15 @@
             '_XOPEN_SOURCE=500',
           ],
         }],
+        [ 'OS=="hpux"', {
+          'defines': [
+            '_XOPEN_SOURCE_EXTENDED',
+            '_INCLUDE_XOPEN_SOURCE_EXTENDED',
+            '_INCLUDE_XOPEN_SOURCE_600',
+            '_INCLUDE_HPUX_SOURCE',
+            '_PSTAT64'
+         ],
+       }],
       ],
       'msvs-settings': {
         'VCLinkerTool': {
