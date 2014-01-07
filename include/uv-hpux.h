@@ -22,14 +22,10 @@
 #ifndef UV_HPUX_H
 #define UV_HPUX_H
 
-#include <port.h>
-
 /* For the sake of convenience and reduced #ifdef-ery in src/unix/sunos.c,
  * add the fs_event fields even when this version of SunOS doesn't support
  * file watching.
  */
-
-#define HPUX_NO_IFADDRS
 
 #define UV_PLATFORM_LOOP_FIELDS                                               \
   uv__io_t fs_event_watcher;                                                  \
